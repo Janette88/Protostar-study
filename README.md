@@ -10,3 +10,15 @@ The levels to be exploited can be found in the /opt/protostar/bin directory.
 
 For debugging the final levels, you can log in as root with password “godmode” \(without the quotes\)
 
+
+
+ The 
+
+`/proc/sys/kernel/core_pattern`
+
+ is set to 
+
+`/tmp/core.%s.%e.%p`
+
+. This means that instead of the general ./core file you get, it will be in a different directory and different file name.
+
