@@ -48,9 +48,19 @@ if\(modified != 0\) {
  This problem is about how to layout the stack in memory
 ```
 
+     这是典型的栈溢出攻击。知识点在于缓冲区溢出时候，变量在内存中的布局。
+
+![](/png/01.png)
+
+1）手工测试
+
+2）利用工具实现
+
+
+
 Ref：
 
 [https://exploit.education/phoenix/stack-zero/](https://exploit.education/phoenix/stack-zero/)
 
-https://blog.csdn.net/guilanl/article/details/61916375
+[https://blog.csdn.net/guilanl/article/details/61916375](https://blog.csdn.net/guilanl/article/details/61916375)
 
