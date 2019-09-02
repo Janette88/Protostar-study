@@ -18,23 +18,27 @@ int main\(int argc, char \*\*argv\)
 
 {
 
-  volatile int modified;
+volatile int modified;
 
-  char buffer\[64\];
+char buffer\[64\];
 
-  modified = 0;
+modified = 0;
 
-  gets\(buffer\);
+gets\(buffer\);
 
-  if\(modified != 0\) {
+if\(modified != 0\) {
 
-      printf\("you have changed the 'modified' variable\n"\);
+```
+  printf\("you have changed the 'modified' variable\n"\);
+```
 
-  } else {
+} else {
 
-      printf\("Try again?\n"\);
+```
+  printf\("Try again?\n"\);
+```
 
-  }
+}
 
 }
 
@@ -47,4 +51,6 @@ int main\(int argc, char \*\*argv\)
 Ref：
 
 [https://exploit.education/phoenix/stack-zero/](https://exploit.education/phoenix/stack-zero/)
+
+https://blog.csdn.net/guilanl/article/details/61916375
 
