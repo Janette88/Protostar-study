@@ -112,8 +112,6 @@ esp 0xbffffcc0
 
 esp+1c buff\[0-3\]  buff起始地址
 
-
-
 esp+5c modified=0  modified地址
 
 ebp   0xbffffd28
@@ -124,9 +122,9 @@ ebp   0xbffffd28
 
 esp+5c处的modified值变为了非0，程序的分支流程被修改，输出也变化了。
 
+2）利用工具自动化实现
 
-
-2）利用工具实现
+ 1） 用python脚本探测漏洞触发点。
 
 Ref：
 
