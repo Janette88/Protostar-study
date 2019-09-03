@@ -42,3 +42,11 @@ win 入口地址 0x080483f4
 
 ![](/png/14.PNG)
 
+
+
+ref:
+
+https://blog.csdn.net/zcc1414/article/details/25595991
+
+https://exploit.education/protostar/stack-four/
+
