@@ -52,8 +52,6 @@ if\(modified == 0x0d0a0d0a\) {
 
 函数变量在内存中的分布如上提。栈溢出
 
-
-
 variable
 
 buffer\[64\]
@@ -64,9 +62,9 @@ argc
 
 argv
 
+用python构造利用代码 exploit.py
+
+注意地址的顺序和字节在内存中的顺序正好相反。
+
 ![](/png/10.png)
-
-
-
-
 
