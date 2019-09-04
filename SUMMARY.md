@@ -7,6 +7,6 @@
 * [Stack3](stack3.md)
 * [Stack4](stack4.md)
 * [Stack5](stack5.md)
-* Stack6
+* [Stack6](stack6.md)
 * Stack7
 
