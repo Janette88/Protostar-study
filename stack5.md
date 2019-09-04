@@ -22,8 +22,6 @@ gets\(buffer\);
 
 ## （二）解题过程：
 
-
-
 gdb 调试 stack5程序，在ret函数上下断点。
 
 b 16
@@ -32,7 +30,7 @@ r
 
 输入aaaaaaaaa
 
-i r 
+i r
 
 print $esp
 
@@ -45,4 +43,12 @@ esp    buffer开始         buffer结束（ebp  ret\)   argc argv
 esp                    esp+0x10        ebp                 ret                   argc              argv
 
 0xbffffcd0     0xbffffce0      0xbffffd28    0xbffffd2c   0x00000001   0xbffffdd4
+
+![](/png/15.png)
+
+如图所示：构造payload
+
+buff\[0\]+ 0x4c+ 返回地址+ shellcode
+
+
 
