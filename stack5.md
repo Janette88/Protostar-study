@@ -14,13 +14,13 @@ int main\(int argc, char \*\*argv\)
 
 {
 
-  char buffer\[64\];
+char buffer\[64\];
 
-  gets\(buffer\);
+gets\(buffer\);
 
 }
 
 ## （二）解题过程：
 
-
+![](/assets/import.png)
 
