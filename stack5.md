@@ -108,8 +108,6 @@ print pad + EIP + NOP + shellcode
 
 第二种：借助于metasploit模块里的脚本定位偏移量。
 
-
-
 5）漏洞利用代码编写
 
 技巧：利用NOP空操作模块可以确保漏洞利用代码不会失败。因为我们无法始终指向正确的地址，所以利用空指令来指向他们，直到shellcode入口位置。
@@ -120,15 +118,15 @@ print pad + EIP + NOP + shellcode
 
 1\)导入struct模块
 
-  import struct
+import struct
 
-2\)填充字符a 
+2\)填充字符a
 
 pad='a'\*76
 
-3\)接下来是漏洞触发 覆盖eip的地方，把eip地址覆盖成shellcode的入口地址，也可以是下一条要执行的指令的地址。原始eip的地址是0xbffffcbc
+3\)接下来是漏洞触发 覆盖eip的地方，把eip地址覆盖成shellcode的入口地址，也可以是下一条要执行的指令的地址。原始eip的地址是0xbffffcbc，下一条指令的地址是0xbffffcbc
 
- EIP = struct.pack\("I",
+EIP = struct.pack\("I",
 
 Ref：
 
