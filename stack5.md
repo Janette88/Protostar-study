@@ -84,6 +84,8 @@ print pad + EIP + NOP + shellcode
 
 2）用kali metasploit环境下的pattern\__create.rb脚本来生成要填充的标志性的字符串，再用pattern_\_offset来定位漏洞触发的位置。
 
+![](/png/19.png)
+
 
 
 Ref：
