@@ -86,6 +86,18 @@ print pad + EIP + NOP + shellcode
 
 ![](/png/19.png)
 
+3\)用生成的长度为100的字符串进行定位溢出点
+
+![](/png/20.png)
+
+程序在0x63413563处崩溃。用pattern\_offset.py定位溢出位置，找到距离buffer起始位置的偏移。
+
+![](/png/21.png)
+
+在偏移量76处，程序崩溃。这跟手工定位的位置是一样的。
+
+4）若想用这个stack5二进制文件获取shell,需要确定这个二进制文件是否具有suid权限。可以用find命令实现。
+
 
 
 Ref：
