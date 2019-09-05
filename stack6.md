@@ -52,6 +52,10 @@ getpath\(\);
 
 填充padding --&gt; system（）地址--&gt;exit\(\)地址----&gt;/bin/sh
 
+1\)判断stack6是否有suid权限
+
+
+
 ref：
 
 [https://blog.csdn.net/stonesharp/article/details/38402953?utm\_source=blogxgwz4](https://blog.csdn.net/stonesharp/article/details/38402953?utm_source=blogxgwz4)
