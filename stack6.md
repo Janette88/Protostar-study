@@ -48,15 +48,9 @@ getpath\(\);
 
 ## （二）解题过程：
 
+这个是典型的的ROP ，绕过栈保护的一种方法。ret2libc意思是返回到c库。调用system函数执行/bin/sh 然后用exit\(\)退出。最终攻击的payload会是：
 
-
-
-
-
-
-
-
-
+填充padding --&gt; system（）地址--&gt;exit\(\)地址----&gt;/bin/sh
 
 ref：
 
