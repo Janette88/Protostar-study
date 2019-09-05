@@ -148,6 +148,8 @@ char sc\[\] =
 
 ![](/png/25.png)
 
+得到了一个root shell
+
 Ref：
 
 [https://xz.aliyun.com/t/3908](https://xz.aliyun.com/t/3908)
