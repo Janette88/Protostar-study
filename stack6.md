@@ -80,6 +80,12 @@ r   运行
 
 x/s \* \(\(char \*\*\)environ+x\)   x是一个数字，然后就打印出相应的变量地址
 
+![](/png/27.png)
+
+3）知道了变量的地址后，来获取漏洞溢出的偏移位置。
+
+![](/png/28.png)
+
 ref：
 
 [https://blog.csdn.net/stonesharp/article/details/38402953?utm\_source=blogxgwz4](https://blog.csdn.net/stonesharp/article/details/38402953?utm_source=blogxgwz4)
