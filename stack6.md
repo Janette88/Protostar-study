@@ -60,11 +60,25 @@ stack6 有suid权限。
 
 2）首先，调用system后，需要执行/bin/sh.要实现这个，需要两步：
 
-   把/bin/sh放到环境变量里 $shell
+把/bin/sh放到环境变量里 $shell
 
-  然后system（）调用该变量。
+然后system（）调用该变量。
 
+方法：
 
+export SHELL=/bin/sh
+
+echo $SHELL
+
+要想得到变量$SHELL的地址，需要用到gdb调试器
+
+b main  在main函数下断点。
+
+r   运行
+
+查看环境变量的地址和值
+
+x/s \* \(\(char \*\*\)environ+x\)   x是一个数字，然后就打印出相应的变量地址
 
 ref：
 
@@ -74,5 +88,5 @@ ref：
 
 [https://0xrick.github.io/binary-exploitation/bof6/](https://0xrick.github.io/binary-exploitation/bof6/)
 
-https://www.shellblade.net/posts.html
+[https://www.shellblade.net/posts.html](https://www.shellblade.net/posts.html)
 
