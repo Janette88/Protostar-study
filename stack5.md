@@ -96,6 +96,8 @@ print pad + EIP + NOP + shellcode
 
 在偏移量76处，程序崩溃。这跟手工定位的位置是一样的。
 
+![](/png/22.png)
+
 4）若想用这个stack5二进制文件获取shell,需要确定这个二进制文件是否具有suid权限。可以用find命令实现。
 
 
