@@ -100,6 +100,14 @@ print pad + EIP + NOP + shellcode
 
 4）若想用这个stack5二进制文件获取shell,需要确定这个二进制文件是否具有suid权限。可以用find命令实现。
 
+![](/png/23.png)
+
+小结：就是计算填充缓冲区的大小有两种方法：
+
+第一种：手工 （利用gdb 定位eip地址---buff起始地址\(print $esp查看之后buff起始地址）
+
+第二种：借助于metasploit模块里的脚本定位偏移量。
+
 
 
 Ref：
