@@ -124,7 +124,7 @@ import struct
 
 pad='a'\*76
 
-3\)接下来是漏洞触发 覆盖eip的地方，把eip地址覆盖成shellcode的入口地址，也可以是下一条要执行的指令的地址。原始eip的地址是0xbffffcbc，下一条指令的地址是0xbffffcbc+4= 0xbffffcc0
+3\)接下来是漏洞触发 覆盖eip的地方，把eip地址覆盖成shellcode的入口地址，也可以是下一条要执行的指令的地址。原始eip的地址是0xbffffcbc，下一条指令的地址是0xbffffcbc+4= 0xbffffcc0  我们需要把这个值添加到一个变量中，但请记住，存放时要把字节顺序反过来，这就是为什么导入struct模块的原因。在Python解释器中导入struct模块，具体命令为import struct;，然后键入struct.pack（“i”，0xBFFF780\)，将会得到\x80\xF7\xFF\xBF，这样一来，就不用担心把顺序弄错了。
 
 EIP = struct.pack\("I", 0xbffffcc0\)
 
@@ -146,7 +146,7 @@ char sc\[\] =
 
 执行后：
 
-
+![](/png/25.png)
 
 Ref：
 
