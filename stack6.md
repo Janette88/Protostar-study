@@ -54,7 +54,7 @@ getpath\(\);
 
 1\)判断stack6是否有suid权限
 
-
+![](/png/26.png)
 
 ref：
 
