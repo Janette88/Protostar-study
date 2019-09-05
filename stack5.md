@@ -70,9 +70,15 @@ print pad + EIP + NOP + shellcode
 
 ![](/png/16.png)
 
+方法2：快速定位漏洞触发的位置并写出exploit
+
+   第一种方法是手工定位，计算填充的字节数和eip返回地址。下面这种 方法借助于定位脚本快速定位。
+
+
+
 Ref：
 
 [https://xz.aliyun.com/t/3908](https://xz.aliyun.com/t/3908)
 
-https://0xrick.github.io/binary-exploitation/bof5/
+[https://0xrick.github.io/binary-exploitation/bof5/](https://0xrick.github.io/binary-exploitation/bof5/)
 
