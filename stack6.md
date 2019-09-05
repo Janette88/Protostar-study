@@ -56,6 +56,16 @@ getpath\(\);
 
 ![](/png/26.png)
 
+stack6 有suid权限。
+
+2）首先，调用system后，需要执行/bin/sh.要实现这个，需要两步：
+
+   把/bin/sh放到环境变量里 $shell
+
+  然后system（）调用该变量。
+
+
+
 ref：
 
 [https://blog.csdn.net/stonesharp/article/details/38402953?utm\_source=blogxgwz4](https://blog.csdn.net/stonesharp/article/details/38402953?utm_source=blogxgwz4)
@@ -63,4 +73,6 @@ ref：
 [https://programlife.net/](https://programlife.net/)
 
 [https://0xrick.github.io/binary-exploitation/bof6/](https://0xrick.github.io/binary-exploitation/bof6/)
+
+https://www.shellblade.net/posts.html
 
