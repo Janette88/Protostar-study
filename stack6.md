@@ -86,6 +86,16 @@ x/s \* \(\(char \*\*\)environ+x\)   x是一个数字，然后就打印出相应�
 
 ![](/png/28.png)
 
+4）gdb 执行进入输入路径填充
+
+![](/png/29.png)
+
+
+
+
+
+
+
 ref：
 
 [https://blog.csdn.net/stonesharp/article/details/38402953?utm\_source=blogxgwz4](https://blog.csdn.net/stonesharp/article/details/38402953?utm_source=blogxgwz4)
