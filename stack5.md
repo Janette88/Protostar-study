@@ -82,7 +82,7 @@ print pad + EIP + NOP + shellcode
 
 显然，出现了熟悉的段错误。通常，我们会调试.coredump的方法找到出错的位置。现在我们用最基础最快速的方法来定位。（调试dump）下一种方法给出。
 
-
+2）用kali metasploit环境下的pattern\__create.rb脚本来生成要填充的标志性的字符串，再用pattern_\_offset来定位漏洞触发的位置。
 
 
 
