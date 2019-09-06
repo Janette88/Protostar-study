@@ -124,13 +124,19 @@ We have to remember that the address of `SHELL`is not the exact address and we w
 
 ![](/png/33.png)
 
-测试中发现可能是环境变量选择的问题。尝试换一个环境变量执行shell="whoami"
+测试中发现可能是环境变量选择的问题。尝试换一个环境变量执行TTE="whoami"
 
 另外环境变量地址的获取方法最好使用程序老获取，gdb获取的不准确，不好调整。
+
+export TTE="whoami"
 
 获取环境变量地址的c代码如下：
 
 getaddress.c
+
+![](/png/34.png)
+
+
 
 \#include &lt;stdio.h&gt;
 
@@ -140,23 +146,33 @@ getaddress.c
 
 int main\(int argc, char \*argv\[\]\) {
 
-                char \*ptr;
+```
+            char \*ptr;
 
-                if\(argc &lt; 3\) {
+            if\(argc &lt; 3\) {
 
-                                printf\("Usage: %s &lt;environment variable&gt; &lt;target program name&gt;\n", argv\[0\]\);
+                            printf\("Usage: %s &lt;environment variable&gt; &lt;target program name&gt;\n", argv\[0\]\);
 
-                                exit\(0\);
+                            exit\(0\);
 
-                }
+            }
 
-                ptr = getenv\(argv\[1\]\); /\* get env var location \*/
+            ptr = getenv\(argv\[1\]\); /\* get env var location \*/
 
-                ptr += \(strlen\(argv\[0\]\) - strlen\(argv\[2\]\)\)\*2; /\* adjust for program name \*/
+            ptr += \(strlen\(argv\[0\]\) - strlen\(argv\[2\]\)\)\*2; /\* adjust for program name \*/
 
-                printf\("%s will be at %p\n", argv\[1\], ptr\);
+            printf\("%s will be at %p\n", argv\[1\], ptr\);
+```
 
+![](/png/35.png)
 
+stack6.py 的脚本如下：
+
+![](/png/36.png)
+
+根据反馈信息，地址做了微调。程序最后返回root.
+
+那么，现在做一下验证，再把TTE环境变量改回"/bin/sh"试试看。
 
 
 
