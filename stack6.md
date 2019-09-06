@@ -124,6 +124,42 @@ We have to remember that the address of `SHELL`is not the exact address and we w
 
 ![](/png/33.png)
 
+测试中发现可能是环境变量选择的问题。尝试换一个环境变量执行shell="whoami"
+
+另外环境变量地址的获取方法最好使用程序老获取，gdb获取的不准确，不好调整。
+
+获取环境变量地址的c代码如下：
+
+getaddress.c
+
+\#include &lt;stdio.h&gt;
+
+\#include &lt;stdlib.h&gt;
+
+\#include &lt;string.h&gt;
+
+int main\(int argc, char \*argv\[\]\) {
+
+                char \*ptr;
+
+                if\(argc &lt; 3\) {
+
+                                printf\("Usage: %s &lt;environment variable&gt; &lt;target program name&gt;\n", argv\[0\]\);
+
+                                exit\(0\);
+
+                }
+
+                ptr = getenv\(argv\[1\]\); /\* get env var location \*/
+
+                ptr += \(strlen\(argv\[0\]\) - strlen\(argv\[2\]\)\)\*2; /\* adjust for program name \*/
+
+                printf\("%s will be at %p\n", argv\[1\], ptr\);
+
+
+
+
+
 ref：
 
 [https://blog.csdn.net/stonesharp/article/details/38402953?utm\_source=blogxgwz4](https://blog.csdn.net/stonesharp/article/details/38402953?utm_source=blogxgwz4)
