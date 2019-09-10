@@ -86,7 +86,9 @@ objdump -s test  除了显示test的全部Header信息，还显示他们对应�
 
 nop nop + ret + system\(\) +参数
 
-8048617:	c3                   	ret
+8048617:    c3                       ret
+
+![](/png/43.png)
 
 
 
