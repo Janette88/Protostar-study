@@ -2,7 +2,9 @@
 
 ## （一） 题目：
 
-       \#include &lt;stdlib.h&gt;
+```
+   \#include &lt;stdlib.h&gt;
+```
 
 \#include &lt;unistd.h&gt;
 
@@ -10,35 +12,33 @@
 
 \#include &lt;string.h&gt;
 
-
-
 char \*getpath\(\)
 
 {
 
-  char buffer\[64\];
+char buffer\[64\];
 
-  unsigned int ret;
+unsigned int ret;
 
-  printf\("input path please: "\); fflush\(stdout\);
+printf\("input path please: "\); fflush\(stdout\);
 
-  gets\(buffer\);
+gets\(buffer\);
 
-  ret = \_\_builtin\_return\_address\(0\);
+ret = \_\_builtin\_return\_address\(0\);
 
+if\(\(ret & 0xb0000000\) == 0xb0000000\) {
 
+```
+  printf\("bzzzt \(%p\)\n", ret\);
 
-  if\(\(ret & 0xb0000000\) == 0xb0000000\) {
+  \_exit\(1\);
+```
 
-      printf\("bzzzt \(%p\)\n", ret\);
+}
 
-      \_exit\(1\);
+printf\("got path %s\n", buffer\);
 
-  }
-
-  printf\("got path %s\n", buffer\);
-
-  return strdup\(buffer\);
+return strdup\(buffer\);
 
 }
 
@@ -46,11 +46,15 @@ int main\(int argc, char \*\*argv\)
 
 {
 
-  getpath\(\);
+getpath\(\);
 
 }
 
 ## （二）解题过程：
+
+如图：![](/png/41.png)
+
+
 
 
 
