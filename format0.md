@@ -68,3 +68,5 @@ argv
 
 payload构造 ： ‘A’\*64 + target\(0xdeadbeef\)
 
+![](/png/47.png)
+
