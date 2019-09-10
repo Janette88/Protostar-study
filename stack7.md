@@ -90,5 +90,11 @@ nop nop + ret + system\(\) +参数
 
 ![](/png/43.png)
 
+76个nop+ ret地址+ system地址+ 环境变量地址
 
+设置环境变量export TTE="whoami"
+
+再利用通用的地址获取代码getaddress.c
+
+![](/png/44.png)
 
