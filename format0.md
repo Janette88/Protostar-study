@@ -74,5 +74,11 @@ payload构造 ： ‘A’\*64 + target\(0xdeadbeef\)
 
 ![](/png/48.png)
 
-2\) 
+2\) 用格式化字符串修改
+
+ We can use the unsigned decimal integer width field modifier %\(int\)u to help fill the buffer.
+
+![](/png/49.png)
+
+
 
