@@ -72,11 +72,7 @@ payload构造 ： ‘A’\*64 + target\(0xdeadbeef\)
 
 用python实现如下：
 
-import struct
 
-nosled = "\x90"\*64
 
-target = struct.pack\("I",0xdeadbeef\)
-
-print nosled+target
+![](/png/48.png)
 
