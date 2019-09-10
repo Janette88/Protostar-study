@@ -74,7 +74,7 @@ payload构造 ： ‘A’\*64 + target\(0xdeadbeef\)
 
 ![](/png/48.png)
 
-用规范的python脚本实现：
+用规范的python脚本实现：
 
 \#!/usr/bin/env python
 
@@ -97,4 +97,10 @@ print nosled+target
 We can use the unsigned decimal integer width field modifier %\(int\)u to help fill the buffer.
 
 ![](/png/49.png)
+
+
+
+ref:
+
+https://youremindmeofmymother.com/2015/07/
 
