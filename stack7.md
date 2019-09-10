@@ -54,7 +54,13 @@ getpath\(\);
 
 如图：![](/png/41.png)
 
+思路：
 
+1） 参照stack5 stack6的方法处理 栈溢出
+
+2）调试coredump的方法
+
+ 不同于stack6，本题限制返回地址不可以是库函数，比如不可是system\(\).这个限制仅仅限制在第一次返回时候，所以意味着，可以利用ROP方法，用一个gadget,后面可以正常跟shellcode
 
 
 
