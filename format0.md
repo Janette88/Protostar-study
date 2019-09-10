@@ -72,7 +72,7 @@ payload构造 ： ‘A’\*64 + target\(0xdeadbeef\)
 
 用python实现如下：
 
-
-
 ![](/png/48.png)
+
+2\) 
 
