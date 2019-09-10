@@ -12,6 +12,6 @@
 * [format0](format0.md)
 * [format1](format1.md)
 * [format2](format2.md)
-* format3
+* [format3](format3.md)
 * format4
 
