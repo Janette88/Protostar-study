@@ -70,7 +70,17 @@ printf\("%s",string\) 和 printf\(string\)是非常不一样的，后者存在�
 
 gdb调试，在vuln下断点，代入参数 python的方法
 
+![](/png/54.png)
 
+如上图，此时target数值的地方在0xbffffe89处
+
+0xbffffe89-0xbffffc70= 537  
+
+537/4=134\(word\)+1
+
+从esp地方填充137个字+1 ,就到了target地方。
+
+python -c 'print "\x37\x96\x04\x08A%134\$n"'
 
 ref:
 
