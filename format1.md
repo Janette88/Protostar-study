@@ -84,11 +84,11 @@ python -c 'print "\x37\x96\x04\x08A%134$n"'
 
 注意在调试过程中会出现地址变化的情况，执行一次成功后，如果还想再调试，最好重启机器。
 
-
-
 ref:
 
 [http://www.atomsec.org/iot/tew654-命令执行漏洞/](http://www.atomsec.org/iot/tew654-命令执行漏洞/)
 
 [http://sh3llc0d3r.com/protostar-exploit-exercises-format1/](http://sh3llc0d3r.com/protostar-exploit-exercises-format1/)
+
+https://zhuanlan.zhihu.com/p/23197261
 
