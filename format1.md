@@ -56,7 +56,7 @@ printf\("%s",string\) 和 printf\(string\)是非常不一样的，后者存在�
 
 1\) 定位target的地址有两种方法
 
-用objdump -t ./format1 \| grep target 
+用objdump -t ./format1 \| grep target
 
 这样可以找到程序 .bss段里 target的地址
 
@@ -65,6 +65,10 @@ printf\("%s",string\) 和 printf\(string\)是非常不一样的，后者存在�
 另外一种方法用gdb找target地址
 
 ![](/png/53.png)
+
+2）确定存放target地址的地方和此时的栈顶esp距离
+
+gdb调试，在vuln下断点，代入参数 python的方法
 
 
 
