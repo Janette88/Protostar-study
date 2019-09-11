@@ -52,6 +52,10 @@ vuln\(argv\[1\]\);
 
 printf\("%s",string\) 和 printf\(string\)是非常不一样的，后者存在漏洞，在构造string时候可以控制，比如后面跟着%x时候就可以输出堆栈的内容。
 
+思路验证：
+
+定位target的地址有两种方法
+
 
 
 ref:
