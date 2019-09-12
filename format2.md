@@ -69,11 +69,13 @@ printf（"格式化字符串",参数...)
 %n - 到目前为止所写的字符数
 ```
 
+思路：关键是构造特殊的字串，使得覆盖原来的target地址，覆盖后的值为64即可。
+
 ref:
 
 [https://www.cnblogs.com/ichunqiu/p/9329387.html](https://www.cnblogs.com/ichunqiu/p/9329387.html)
 
 [https://www.freebuf.com/column/207425.html](https://www.freebuf.com/column/207425.html)
 
-https://blog.51cto.com/terrying/1182328
+[https://blog.51cto.com/terrying/1182328](https://blog.51cto.com/terrying/1182328)
 
