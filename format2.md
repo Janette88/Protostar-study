@@ -2,11 +2,11 @@
 
 ## （一） 题目：
 
-  \#include &lt;unistd.h&gt;
+\#include &lt;unistd.h&gt;
 
 \#include &lt;stdio.h&gt;
 
-\#include &lt;string.h&gt; 
+\#include &lt;string.h&gt;
 
 int target;
 
@@ -14,21 +14,25 @@ void vuln\(\)
 
 {
 
-  char buffer\[512\];
+char buffer\[512\];
 
-  fgets\(buffer, sizeof\(buffer\), stdin\);
+fgets\(buffer, sizeof\(buffer\), stdin\);
 
-  printf\(buffer\);
+printf\(buffer\);
 
-  if\(target == 64\) {
+if\(target == 64\) {
 
-      printf\("you have modified the target :\)\n"\);
+```
+  printf\("you have modified the target :\)\n"\);
+```
 
-  } else {
+} else {
 
-      printf\("target is %d :\(\n", target\);
+```
+  printf\("target is %d :\(\n", target\);
+```
 
-  }
+}
 
 }
 
@@ -36,9 +40,15 @@ int main\(int argc, char \*\*argv\)
 
 {
 
-  vuln\(\);
+vuln\(\);
 
 }
+
+
+
+## （二）解题过程：
+
+## 
 
 
 
