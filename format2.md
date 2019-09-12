@@ -46,13 +46,9 @@ vuln\(\);
 
 ## （二）解题过程：
 
-
-
-
+  这道题需要了解格式化字符串漏洞的原理以及运用。
 
 ref:
 
-https://www.cnblogs.com/ichunqiu/p/9329387.html
-
-
+[https://www.cnblogs.com/ichunqiu/p/9329387.html](https://www.cnblogs.com/ichunqiu/p/9329387.html)
 
