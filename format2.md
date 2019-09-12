@@ -54,7 +54,6 @@ vuln\(\);
 
 ```
 printf（"格式化字符串",参数...)
-
 ```
 
 该`printf`函数的第一个参数是由格式化说明符与字符串组成，用来规定参数用什么格式输出内容。
@@ -68,7 +67,6 @@ printf（"格式化字符串",参数...)
 %c - 字符 - 输出字符
 %p - 指针 - 指针地址
 %n - 到目前为止所写的字符数
-
 ```
 
 ref:
@@ -76,4 +74,6 @@ ref:
 [https://www.cnblogs.com/ichunqiu/p/9329387.html](https://www.cnblogs.com/ichunqiu/p/9329387.html)
 
 [https://www.freebuf.com/column/207425.html](https://www.freebuf.com/column/207425.html)
+
+https://blog.51cto.com/terrying/1182328
 
